@@ -1,13 +1,13 @@
 const dotenv = require('dotenv');
 dotenv.config();
-//var path = require('path');
+var path = require('path');
 var bodyParser = require('body-parser');
 
 const express = require('express');
 const app = express();
 var aylienAPI = require('aylien_textapi');
 
-var textapi = new aylien({
+var textapi = new aylienAPI({
   application_id: process.env.API_ID,
   application_key: process.env.API_KEY
 });
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use(express.static('dist'));
+app.use(express.static('index.html'));
 
 //const app = require('./app');
 // designates what port the app will listen to for incoming requests
@@ -24,9 +24,15 @@ app.listen(8080, function () {
     console.log('App listening on port 8080!')
 });
 
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html');
+// route.get('/favicon.ico', (_req, res) => res.sendFile(path.join(__dirname, '../src/client/views/index.html')))
+
+app.get('/',function(req,res){
+    res.sendFile(path.resolve('./src/client/views/index.html'));
 });
+
+// route.get("/", (req, res) => {
+//    res.sendFile(path.resolve('../views/index.html')
+// });
 
 // API request sent to Aylien API
 app.post('/apicall', (req, res) => {

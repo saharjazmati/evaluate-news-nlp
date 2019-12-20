@@ -9,6 +9,7 @@ const closeError = (msg) => {
 }
 
 /* Show errors */
+
 const showError = (msg) => {
     document.getElementsByClassName('.errorText').innerHTMl = msg;
     document.getElementById('error').classList.remove('hide');

@@ -53,7 +53,7 @@
                     <input id="name" type="url" name="input-url" value="" placeholder="Any News Website URL Using http or https">
                     <input id="callapi" class="submitbtn" type="submit" name="url" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
-            <section>
+            </section>
 
             <section>
                 <strong>Results:</strong>
@@ -87,3 +87,15 @@
 
     </body>
 </html>
+<!--// Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js', {scope: './'}).then(registration => {
+                    console.log('SW registered: ', registration);
+                    });
+                    });
+                    } else {
+                    console.log("Service Working not working");
+                    }
+        </script>-->

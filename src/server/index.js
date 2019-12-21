@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use(express.static('index.html'));
+app.use(express.static('dist'));
 
 //const app = require('./app');
 // designates what port the app will listen to for incoming requests
@@ -27,7 +27,7 @@ app.listen(8080, function () {
 // route.get('/favicon.ico', (_req, res) => res.sendFile(path.join(__dirname, '../src/client/views/index.html')))
 
 app.get('/',function(req,res){
-    res.sendFile(path.resolve('./src/client/views/index.html'));
+    res.sendFile(path.resolve("./src/client/views/index.html"))//./src/client/views/index.html'));
 });
 
 // route.get("/", (req, res) => {

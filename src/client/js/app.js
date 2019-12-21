@@ -4,7 +4,7 @@ import {isURL, closeError, showError, showHideResults} from ('./helpers');
 function handleSubmit(event) {
     event.preventDefault();
 
-    var url = document.querySelector('input[name=input-url');
+    var url = document.querySelectorAll('input[name=input-url');
     // check what text was put into the form field
     // let formText = document.getElementById('name').value
     // checkForName(formText)
@@ -37,6 +37,7 @@ function handleSubmit(event) {
     }
 }
 
+showHideResults();
 /* This sends the user's URL (POST request) to server */
 // const sendRequest = async (url = '', data = {}) => {
 //         const res = await fetch(url, {

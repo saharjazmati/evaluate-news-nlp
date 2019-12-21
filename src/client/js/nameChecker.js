@@ -1,16 +1,11 @@
-function checkForName(inputText) {
-    console.log("::: Running checkForName :::", inputText);
-    let names = [
-        "Picard",
-        "Janeway",
-        "Kirk",
-        "Archer",
-        "Georgiou"
-    ]
+function userUrl(isURL) {
+    console.log("::: Checking URL :::", isURL);
 
-    if(names.includes(inputText)) {
-        alert("Welcome, Captain!")
+    if(isURL) {
+        return true;
+    } else {
+        return false;
     }
 }
 
-export { checkForName }
+export { userUrl }

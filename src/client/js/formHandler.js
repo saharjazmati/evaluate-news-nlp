@@ -1,5 +1,6 @@
-import {isURL, closeError, showError, showHideResults} from ('./helpers');
-
+//import { isURL } from ('./helpers');
+//import { isURL } from 'validator';
+const userUrl = require('valid-url');
 function handleSubmit(event) {
     event.preventDefault();
 
@@ -9,7 +10,7 @@ function handleSubmit(event) {
     // checkForName(formText)
 
     // check for valid url
-    if(Client.isURL(JSON.parse(JSON.stringify(url[0].value))))
+    if(Client.userUrl(JSON.parse(JSON.stringify(url[0].value))))
     {
         console.log("::: Form Submitted :::");
         console.log("Requesting Information");

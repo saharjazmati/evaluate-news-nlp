@@ -9,7 +9,7 @@ import './styles/base.scss'
 
 
 export{
-	validURL,
+	userUrl,
 	handleSubmit
 }
 

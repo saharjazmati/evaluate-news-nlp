@@ -1,30 +1,6 @@
-const dotenv = require('dotenv');
-dotenv.config();
-/* Validate URL */
 
-//isURL('http|https|www.');
-var aylienAPI = require('aylien_textapi');
 
-const validRequest = (req, res, next) => {
-    if(!req.body.text) {
-        return res.status(404).json({ message: 'Input Invalid' })
-    }
-    return next();
-}
 
-const apiPostRequest = (req, res, next) => {
-    var textapi = new aylienAPI({
-    application_id: process.env.API_ID,
-    application_key: process.env.API_KEY
-});
-    textapi.sentiment({
-        url: req.body.text,
-        //mode: 'document',
-        best_image: true
-    }, function(error, response) {
-        res.send(response)
-    });
-}
 
 /* Show errors */
 // const closeError = (msg) => {
@@ -44,7 +20,3 @@ const apiPostRequest = (req, res, next) => {
 
 // const showHideResults = (hide = '') => hideElement('results', hide);
 
-export {
-    apiPostRequest,
-    validRequest
-};

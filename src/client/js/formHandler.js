@@ -1,29 +1,30 @@
-//import { isURL } from ('./helpers');
-//import { isURL } from 'validator';
 const userUrl = require('valid-url');
-function handleSubmit(event) {
+const handleSubmit = function(event) {
     event.preventDefault();
 
-    var url = document.querySelectorAll('input[name=input-url');
+console.log("::: Form Submitted :::");
+
+    let formText = document.getElementById('name').value;
     // check what text was put into the form field
-    // let formText = document.getElementById('name').value
     // checkForName(formText)
 
     // check for valid url
-    if(Client.userUrl(JSON.parse(JSON.stringify(url[0].value))))
-    {
-        console.log("::: Form Submitted :::");
-        console.log("Requesting Information");
-        console.log(JSON.stringify(url[0].value));
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({text: url[0].value})
+    if(userUrl.isUri(formText)) {
+        fetchAylien('http://localhost:8080/article', formText);
+    } else {
+        document.getElementById('error').innerHTML = 'Please Enter a Valid URL.';
+    }
+
+const fetchAylien = async (url, input) => {
+    const response = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({text: input})
         })
 
-/* Shows results or errors on page */
+    /* Shows results or errors on page */
     .then(res => res.json())
     .then(function(res) {
         console.log(res); // for debugging
@@ -33,13 +34,13 @@ function handleSubmit(event) {
         document.getElementById('subjectivity_confidence').innerHTML = res.subjectivity_confidence;
         document.getElementById('excerpt').innerHTML = res.excerpt;
     });
- } else {
-    showError('Please Enter a Valid URL');
-
+    try {
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch(error) {
+        console.log("error", error);
     }
+};
 }
-
-
-showHideResults();
-
-export { handleSubmit }
+export {handleSubmit};

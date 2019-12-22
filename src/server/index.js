@@ -1,8 +1,14 @@
+const dotenv = require('dotenv');
+dotenv.config();
 var path = require('path');
 var bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
-let apicall = require('./helpers')
+var aylienAPI = require('aylien_textapi');
+var textapi = new aylienAPI({
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -23,6 +29,22 @@ app.get('/',function(req,res){
 });
 
 // API request sent to Aylien API
-app.post('/', apicall.validRequest, apicall.apiPostRequest);
+app.post('/article', function(req, res) {
+    console.log('POST request received');
+    console.log(req.body)
+
+    textapi.sentiment({
+      url: req.body.text,
+      mode: 'document'
+    }, function(error, response) {
+      console.log('inside post function');
+      console.log(response);
+      res.send(response)
+      if (error === null) {
+        console.log('inside error');
+        console.log(response);
+      }
+    })
+});
 
 module.exports = app;

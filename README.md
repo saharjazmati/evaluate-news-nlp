@@ -79,8 +79,8 @@ console.log(`Your API key is ${process.env.API_KEY}`);
 ...Not that you would want to do that. This means that our updated API credential settings will look like this:
 ```javascript
 // set aylien API credentials
-// NOTICE that textapi is the name I used, but it is arbitrary. 
-// You could call it aylienapi, nlp, or anything else, 
+// NOTICE that textapi is the name I used, but it is arbitrary.
+// You could call it aylienapi, nlp, or anything else,
 //   just make sure to make that change universally!
 var textapi = new aylien({
   application_id: process.env.API_ID,
@@ -90,7 +90,7 @@ var textapi = new aylien({
 
 ### Step 5: Using the API
 
-We're ready to go! The API has a lot of different endpoints you can take a look at [here](https://docs.aylien.com/textapi/endpoints/#api-endpoints). And you can see how using the SDK simplifies the requests we need to make. 
+We're ready to go! The API has a lot of different endpoints you can take a look at [here](https://docs.aylien.com/textapi/endpoints/#api-endpoints). And you can see how using the SDK simplifies the requests we need to make.
 
 I won't provide further examples here, as it's up to you to create the various requests and make sure your server is set up appropriately.
 
@@ -106,3 +106,14 @@ Once you are hooked up to the Aylien API, you are most of the way there! Along w
 ## Deploying
 
 A great step to take with your finished project would be to deploy it! Unfortunately its a bit out of scope for me to explain too much about how to do that here, but checkout [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) for some really intuitive free hosting options.
+
+## Get Up and Running
+Fork this repo, then clone the branch of your choice from your forked repo down to your computer:
+
+git clone --
+cd into your new folder and run:
+
+npm install
+npm run build-dev to start the webpack dev server
+npm run build-prod to generate a dist folder for prod
+npm start to run the Express server on port 8080

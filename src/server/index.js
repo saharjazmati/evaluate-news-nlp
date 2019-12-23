@@ -3,6 +3,7 @@ dotenv.config();
 var path = require('path');
 var bodyParser = require('body-parser');
 const express = require('express');
+var cors = require('cors');
 const app = express();
 var aylienAPI = require('aylien_textapi');
 var textapi = new aylienAPI({
@@ -10,6 +11,7 @@ var textapi = new aylienAPI({
     application_key: process.env.API_KEY
 });
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -21,7 +23,8 @@ app.use(express.static('dist'));
 app.listen(8080, function () {
     console.log('App listening on port 8080!')
 });
-
+//console.log(`__dirname: ${__dirname}`)
+//const projectData = [];
 // route.get('/favicon.ico', (_req, res) => res.sendFile(path.join(__dirname, '../src/client/views/index.html')))
 
 app.get('/',function(req,res){

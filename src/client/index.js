@@ -1,4 +1,6 @@
-const handleSubmit = require('./js/formHandler');
+import { handleSubmit } from './js/formHandler';
+//import { validURL } from './js/formHandler';
+import { submitButton } from './js/submitButton';
 //const userUrl = require('./js/nameChecker');
 import './styles/resets.scss'
 import './styles/header.scss'
@@ -9,6 +11,7 @@ import './styles/base.scss'
 
 
 export{
-	handleSubmit
+	handleSubmit,
+	submitButton
 }
 

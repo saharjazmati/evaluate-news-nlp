@@ -43,4 +43,4 @@ const fetchAylien = async (url, input) => {
     }
 };
 }
-export {handleSubmit};
+module.exports = handleSubmit;

@@ -23,7 +23,7 @@ app.use(express.static('dist'));
 app.listen(8080, function () {
     console.log('App listening on port 8080!')
 });
-//console.log(`__dirname: ${__dirname}`)
+console.log(`__dirname: ${__dirname}`)
 //const projectData = [];
 // route.get('/favicon.ico', (_req, res) => res.sendFile(path.join(__dirname, '../src/client/views/index.html')))
 

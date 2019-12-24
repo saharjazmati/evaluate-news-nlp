@@ -24,7 +24,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "isuri": "^2.0.3",
-    "valid-url": "^1.0.9"
+    "serviceworker-webpack-plugin": "^1.0.1",
+    "valid-url": "^1.0.9",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",

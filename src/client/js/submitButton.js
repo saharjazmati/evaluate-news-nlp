@@ -6,7 +6,8 @@ function submitButton (event) {
         .then(function (response) {
             console.log(response)
             document.getElementsById(submitButtonResults).innerHtML = JSON.stringify(response);
-        })
-    };
+        });
+    }
+
 
 export { submitButton }

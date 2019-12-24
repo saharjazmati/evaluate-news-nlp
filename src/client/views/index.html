@@ -1,18 +1,3 @@
-
-    <!-- <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js').then(registration => {
-                    console.log('SW registered: ', registration);
-                });
-            });
-        } else {
-            console.log("Service Working not working");
-        }
-    </script> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,13 +41,8 @@
                     <input id="callapi" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
                 <div id="error"></div>
-         <!-- </section>
-            <section class="errors">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    <div id="error"></div>
-            </section> -->
 
-            <section>
+            <section class="url-results">
                 <strong>Results:</strong>
                 <div id="results" class="result-blocks">
                     <!-- the content will be added here by JS -->
@@ -82,16 +62,27 @@
                         </li>
 
                         <h3>Text Excerpt:</h3>
-                        <p id="excerpt"></p>
+                        <p id="text"></p>
                     </ul>
                 </div>
             </section>
         </main>
 
+        <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                    console.log('SW registered: ', registration);
+                });
+            });
+        } else {
+            console.log("Service Working not working");
+        }
+    </script>
 
 
         <footer>
-            <p>This is a footer</p>
+            <p>Project Created for the Udacity FEND &copy; 2019</p>
         </footer>
 
     </body>

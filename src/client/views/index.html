@@ -27,7 +27,7 @@
         <main>
             <h1>The Aylien API</h1>
 
-            <p>
+            <p class="description">
                 The Aylien Text Analysis API provides powerful and flexible AI-driven content analysis solutions that
                 bring the power of NLP to the masses. We help developers, data scientists, and marketers understand
                 human-generated textual content at scale.
@@ -47,22 +47,24 @@
                 <div id="results" class="result-blocks">
                     <!-- the content will be added here by JS -->
                     <ul>
-                        <li>
+                        <li class="list">
                             <h3>Text Polarity:</h3>
                             <p id="polarity"></p>
                             <h4>Confidence: </h4>
                             <p id="polarity_confidence"></p>
                         </li>
 
-                        <li>
+                        <li class="list">
                             <h3>Text Subjectivity:</h3>
                             <p id="subjectivity"></p>
                             <h4>Confidence: </h4>
                             <p id="subjectivity_confidence"></p>
                         </li>
 
+                        <li class="list">
                         <h3>Text Excerpt:</h3>
                         <p id="text"></p>
+                        </li>
                     </ul>
                 </div>
             </section>

@@ -1,5 +1,4 @@
 import { handleSubmit } from './js/formHandler';
-//import { validURL } from './js/formHandler';
 import { submitButton } from './js/submitButton';
 
 import './styles/resets.scss'

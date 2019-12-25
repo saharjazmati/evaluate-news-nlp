@@ -1,9 +1,4 @@
 const userUrl = require('valid-url');
-// const polarity = document.getElementById('polarity');
-// const pconfidence = document.getElementById('polarity_confidence');
-// const subjectivity = document.getElementById('subjectivity');
-// const sconfidence = document.getElementById('subjectivity_confidence');
-// const excerpt = document.getElementById('excerpt');
 
 const handleSubmit = function(event) {
     event.preventDefault()
@@ -25,16 +20,6 @@ console.log("::: Form Submitted :::");
     }
 }
 
-// const getData = async (url = '') => {
-//     try {
-//         const response = await fetch(url);
-//         const data = await response.json();
-//         return data;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-
 const fetchAylien = async (url, input) => {
     const res = await fetch(url, {
         method: "POST",
@@ -44,7 +29,7 @@ const fetchAylien = async (url, input) => {
             "Content-Type": "application/json"
         },
         redirect: "follow",
-        body: JSON.stringify({text: input})     //({text: input})
+        body: JSON.stringify({text: input})
     })
     .then(res => res.json())
     .then(function(res) {
@@ -54,7 +39,6 @@ const fetchAylien = async (url, input) => {
         document.getElementById('subjectivity_confidence').innerHTML = res.subjectivity_confidence;
         document.getElementById('text').innerHTML = res.text;
     });
-
 }
 
 export { handleSubmit }

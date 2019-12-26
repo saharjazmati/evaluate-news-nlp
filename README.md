@@ -35,3 +35,4 @@ You will need to go [here](https://developer.aylien.com/signup) to get Aylien cr
 * Express
 * Babel
 * Aylien API
+* valid-url

@@ -1,6 +1,10 @@
 {
   "name": "example-project",
   "version": "1.0.0",
+  "engines": {
+    "node": "13.x",
+    "npm": "6.x"
+  },
   "main": "index.js",
   "module": "module.js",
   "modules.root": "lib",
@@ -8,6 +12,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "heroku-postbuild": "npm install",
     "start": "node src/server/index.js",
     "dev": "webpack --mode development --hot",
     "build": "webpack --mode production",
@@ -15,8 +20,10 @@
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open",
     "webpack-dev-server": "node src/server/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "heroku"
+  ],
+  "author": "juwana-zerman",
   "license": "ISC",
   "description": "",
   "dependencies": {

@@ -8,8 +8,7 @@ const fetchAylien = async (url, input) => {
     if (userUrl.isUri(formText)) {
         fetchAylien('http://localhost:8080/article', formText);
     }
-}
-    const res = await fetch(url, {
+        const res = await fetch(url, {
         method: "POST",
         mode: "cors",
         credentials: "same-origin",
@@ -29,5 +28,5 @@ const fetchAylien = async (url, input) => {
         document.getElementById('text').innerHTML = res.text;
     });
     }
-
+}
 export { handleSubmit, fetchAylien }

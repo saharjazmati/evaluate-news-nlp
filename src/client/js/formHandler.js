@@ -12,12 +12,12 @@ const fetchAylien = async (url, input) => {
         method: "POST",
         mode: "cors",
         credentials: "same-origin",
+        body: JSON.stringify({
+            text: input
+        }),
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-            text: input
-        })
     })
      .then(res => res.json())
      .then(function (res) {

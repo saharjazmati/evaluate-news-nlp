@@ -1,4 +1,4 @@
-import userUrl from { urlChecker };
+import { userUrl } from './js/urlChecker';;
 const handleSubmit = function (event) {
     event.preventDefault()
     console.log("::: Form Submitted :::");
@@ -8,6 +8,7 @@ const fetchAylien = async (url, input) => {
     if (userUrl.isUri(formText)) {
         fetchAylien('http://localhost:8080/article', formText);
     }
+}
     const res = await fetch(url, {
         method: "POST",
         mode: "cors",
@@ -28,5 +29,5 @@ const fetchAylien = async (url, input) => {
         document.getElementById('text').innerHTML = res.text;
     });
     }
-}
+
 export { handleSubmit, fetchAylien }

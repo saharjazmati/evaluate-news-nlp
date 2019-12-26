@@ -1,5 +1,6 @@
-const userUrl = require('valid-url');
 import { fetchAylien } from './js/formHandler';
+const userUrl = require('valid-url');
+
 
 // check for valid url
 if (userUrl.isUri(formText)) {

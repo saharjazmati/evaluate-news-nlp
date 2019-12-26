@@ -18,9 +18,8 @@ You will need to go [here](https://developer.aylien.com/signup) to get Aylien cr
 
 ### To Run Project
 
-- cd into your new folder and run in prod mode (currently, prod mode seems to work more consistently than dev mode):
+- cd into your new folder and run in prod mode **(currently, prod mode seems to work more consistently than dev mode)**:
 - `npm install`
-- `npm run build-dev to start the webpack dev server`
 - `npm run build-prod to generate a dist folder for prod`
 - `npm run start to run the Express server on port 8080`
 
@@ -28,11 +27,11 @@ You will need to go [here](https://developer.aylien.com/signup) to get Aylien cr
 
 ## Dependencies
 
-*HTML
-*CSS
-*Sass
-*JavaScript
-*Webpack
-*Express
-*Babel
-*Aylien API
+* HTML
+* CSS
+* Sass
+* JavaScript
+* Webpack
+* Express
+* Babel
+* Aylien API

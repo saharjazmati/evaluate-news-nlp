@@ -17,9 +17,13 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static('dist'));
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8080;
+}
+app.listen(port); {
   console.log('App listening on port 8080!')
-});
+};
 console.log(`__dirname: ${__dirname}`)
 // route.get('/favicon.ico', (_req, res) => res.sendFile(path.join(__dirname, '../src/client/views/index.html')))
 app.get('/', function (req, res) {

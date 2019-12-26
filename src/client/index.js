@@ -1,5 +1,6 @@
 import { handleSubmit } from './js/formHandler';
 import { submitButton } from './js/submitButton';
+import { fetchAylien } from './js/formHandler';
 
 import './styles/resets.scss'
 import './styles/header.scss'
@@ -7,8 +8,9 @@ import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/base.scss'
 
-export{
+export {
 	handleSubmit,
-	submitButton
+	submitButton,
+	fetchAylien
 }
 

@@ -16,10 +16,13 @@ const handleSubmit = function (event) {
         document.getElementById('error-message').innerHTML = 'Please Enter a Valid URL.';
     }
 }
+
 const fetchAylien = async (url, input) => {
+
     const res = await fetch(url, {
         method: "POST",
         mode: "cors",
+        cache: "no-cache",
         credentials: "same-origin",
         headers: {
             "Content-Type": "application/json"
@@ -28,14 +31,14 @@ const fetchAylien = async (url, input) => {
         body: JSON.stringify({
             text: input
         })
-    }).then(res => res.json()).then(function (res) {
+    })
+     .then(res => res.json())
+     .then(function (res) {
         document.getElementById('polarity').innerHTML = res.polarity;
         document.getElementById('polarity_confidence').innerHTML = res.polarity_confidence;
         document.getElementById('subjectivity').innerHTML = res.subjectivity;
         document.getElementById('subjectivity_confidence').innerHTML = res.subjectivity_confidence;
         document.getElementById('text').innerHTML = res.text;
-    });
+    })
 }
-export {
-    handleSubmit
-}
+export { handleSubmit, fetchAylien }

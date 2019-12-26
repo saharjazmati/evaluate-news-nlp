@@ -4,6 +4,7 @@
   "main": "index.js",
   "module": "module.js",
   "modules.root": "lib",
+  "proxy": "http://localhost:8080",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",

@@ -1,76 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Evaluate a News Article</title>
-        <link rel="stylesheet" href="main.css">
-        <!-- <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css"> -->
-        <link rel="icon" type="image/png" href="https://img.icons8.com/nolan/100/000000/new-openstack-logo.png" sizes="48x48">
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Evaluate a News Article</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="https://img.icons8.com/nolan/100/000000/new-openstack-logo.png" rel="icon" sizes="48x48"
+        type="image/png">
+</head>
 
-        <header>
-            <div class="">
-                Udacity
-            </div>
-            <div class="">
-                Evaluate a News Article with NLP
-            </div>
-        </header>
-
-        <main>
-            <h1>The Aylien API</h1>
-
-            <p class="description">
-                The Aylien Text Analysis API provides powerful and flexible AI-driven content analysis solutions that
-                bring the power of NLP to the masses. We help developers, data scientists, and marketers understand
-                human-generated textual content at scale.
-            </p>
-
-            <h2>Try it out! Type in a "URL" to see what the Aylien NLP understands from it.</h2>
-
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="url" name="input" value="" placeholder="Any News Website URL Using http or https">
-                    <input id="callapi" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-                <div id="error"></div>
-
+<body>
+    <header>
+        <div class="">
+            Udacity
+        </div>
+        <div class="">
+            Evaluate a News Article with NLP
+        </div>
+    </header>
+    <main>
+        <h1>The Aylien API</h1>
+        <p class="description">The Aylien Text Analysis API provides powerful and flexible AI-driven content analysis
+            solutions that bring the power of NLP to the masses. We help developers, data scientists, and marketers
+            understand human-generated textual content at scale.</p>
+        <h2>Try it out! Type in a "URL" to see what the Aylien NLP understands from it.</h2>
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <input id="name" name="input" placeholder="Any News Website URL Using http or https" type="url"
+                    value=""> <input id="callapi" name="" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return Client.handleSubmit(event)" type="submit" value="submit">
+            </form>
+            <div id="error"></div>
             <section class="url-results">
                 <strong>Results:</strong>
-                <div id="results" class="result-blocks">
+                <div class="result-blocks" id="results">
                     <!-- the content will be added here by JS -->
                     <ul>
                         <li class="list">
                             <h3>Text Polarity:</h3>
                             <p id="polarity"></p>
-                            <h4>Confidence: </h4>
+                            <h4>Confidence:</h4>
                             <p id="polarity_confidence"></p>
                         </li>
-
                         <li class="list">
                             <h3>Text Subjectivity:</h3>
                             <p id="subjectivity"></p>
-                            <h4>Confidence: </h4>
+                            <h4>Confidence:</h4>
                             <p id="subjectivity_confidence"></p>
                         </li>
-
                         <li class="list">
-                        <h3>Text Excerpt:</h3>
-                        <p id="text"></p>
+                            <h3>Text Excerpt:</h3>
+                            <p id="text"></p>
                         </li>
                     </ul>
                 </div>
             </section>
-        </main>
-
-        <script>
+        </section>
+    </main>
+    <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/service-worker.js').then(registration => {
@@ -81,11 +69,9 @@
             console.log("Service Working not working");
         }
     </script>
+    <footer>
+        <p>Project Created for the Udacity FEND &copy; 2019</p>
+    </footer>
+</body>
 
-
-        <footer>
-            <p>Project Created for the Udacity FEND &copy; 2019</p>
-        </footer>
-
-    </body>
 </html>

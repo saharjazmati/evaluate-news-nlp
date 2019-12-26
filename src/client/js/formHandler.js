@@ -11,12 +11,10 @@ const fetchAylien = async (url, input) => {
     const res = await fetch(url, {
         method: "POST",
         mode: "cors",
-        cache: "no-cache",
         credentials: "same-origin",
         headers: {
             "Content-Type": "application/json"
         },
-        redirect: "follow",
         body: JSON.stringify({
             text: input
         })

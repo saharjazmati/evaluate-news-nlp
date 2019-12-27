@@ -18,12 +18,14 @@ You will need to go [here](https://developer.aylien.com/signup) to get Aylien cr
 
 ### To Run Project
 
-- cd into your new folder and run in prod mode **(currently, prod mode seems to work more consistently than dev mode)**:
+- cd into your new folder and run in prod mode **(Currently, prod mode allows you to see the results of the API fetch)**:
 - `npm install`
 - `npm run build-prod to generate a dist folder for prod`
 - `npm run start to run the Express server on port 8080`
 
 **Note:** The web page can be accessed with `localhost:8080`
+
+**Currently, dev mode runs the webpack server allows the errors to be seen when the fetch fails**
 
 ## Dependencies
 

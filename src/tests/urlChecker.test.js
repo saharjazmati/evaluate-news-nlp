@@ -1,7 +1,7 @@
-import { userUrl } from '../client/js/urlChecker';
+import { userUrl } from '../client/js/formHandler';
 
-describe('Test, the variable "userUrl" should exist', () => {
-test('It should return true', () => {
-    expect(userUrl).toBeDefined();
-});
+describe('Test, the import "userUrl" should exist', () => {
+    test('It should return true', async () => {
+        expect(typeof userUrl).toBeDefined();
+    });
 });
